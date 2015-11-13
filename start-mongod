@@ -1,1 +1,4 @@
+## These are settings utilized for testing.
+## No journal was being utilized as this was developed on cloud 9. Memory isn't sufficent enought to allow for journal.
+## Change dppath to the correct directory if needed.
 mongod --nojournal --dbpath=data
