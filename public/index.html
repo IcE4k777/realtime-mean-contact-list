@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+<!-- Including Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+<!-- Modules -->
+<script src="js/modules/contactApp.js"></script>
+
+<!-- Services -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/services/socket-io-service.js"></script>
+
+<!-- Controllers -->
+<script src="js/controllers/contactAppController.js"></script>
+
+<!-- Directives -->
+<script src="js/directives/contactAppTable.js"></script>
+
+<title>
+    Contact List App
+</title>
+</head>
+    <body ng-app="contactApp">
+        <div class="container">
+        <h1>Contact List App</h1>
+        <contact-app-table></contact-app-table>
+        </div>
+    </body>
+</html>
