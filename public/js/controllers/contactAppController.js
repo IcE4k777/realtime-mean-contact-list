@@ -10,7 +10,11 @@ contactApp.controller('contactAppController', [ '$scope', '$http', 'socket', fun
     });
     
     socket.on("edit:return:contact", function(data){
-       $scope.contact = data;
+        $scope.contact = data;
+    });
+    
+    socket.on("put:updated:contactList", function(data){
+        refresh();
     });
     
     var refresh = function()
@@ -65,7 +69,7 @@ contactApp.controller('contactAppController', [ '$scope', '$http', 'socket', fun
         //  });
          
          socket.emit("put:contactList", $scope.contact);
-         refresh();
+         //refresh();
      }
      
      $scope.deselect = function()
