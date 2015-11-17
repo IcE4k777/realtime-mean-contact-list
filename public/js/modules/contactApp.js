@@ -1,3 +1,3 @@
 /*global angular*/
 
-var contactApp = angular.module('contactApp', []);
+var contactApp = angular.module('contactApp', ['ngRoute', 'ngMessages']);

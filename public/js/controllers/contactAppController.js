@@ -1,11 +1,14 @@
 /*global angular*/
-/*global io*/
 /*global contactApp*/
  
-contactApp.controller('contactAppController', [ '$scope', '$http', 'socket', function($scope, $http, socket) {
+contactApp.controller('contactAppController', [ '$scope', '$http', '$window', 'socket', function($scope, $http, $window, socket) {
+    
+    //We must authenticate to the server within 5 seconds or the socket connection will close.
+    socket.emit('authenticate', $window.localStorage.token);
     
     socket.on("get:return:contactList",function(data){
         $scope.contactList = data;
+        console.log("CONTACT DATA: " + data);
         $scope.contact = "";
     });
     
@@ -16,6 +19,17 @@ contactApp.controller('contactAppController', [ '$scope', '$http', 'socket', fun
     socket.on("put:updated:contactList", function(data){
         refresh();
     });
+    
+    socket.on("connectedClientsUpdate", function(data){
+       console.log(JSON.stringify(data)); 
+       $scope.connectedUsers = data;
+    });
+    
+    socket.on('connect', function(data){
+       console.log("connected"); 
+    });
+    
+    socket.emit("testMessage");
     
     var refresh = function()
     {

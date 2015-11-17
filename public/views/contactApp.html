@@ -1,0 +1,21 @@
+<div class="container contactAppPadding" ng-controller="contactAppController">
+    <div class="row">
+        <div class="contactAppWrap col-md-10">
+            <contact-app-table></contact-app-table>
+        </div>
+        
+        <div class="connectedUserPanelWrap col-md-2">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><h3 class="panel-title">Connected Users</h3></div>
+                <div class="panel-body">
+                </div>
+                
+                <!-- List group -->
+                <ul class="list-group">
+                <li class="list-group-item" ng-repeat="user in connectedUsers">{{user.username}}</li> 
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

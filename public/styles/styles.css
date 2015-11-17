@@ -1,0 +1,17 @@
+body { padding-top: 40px; }
+
+.loginPanel{
+    padding-top:40px
+}
+
+.registerPanel{
+    padding-top:40px
+}
+
+.contactAppPadding{
+    padding-top:40px;
+}
+
+.loginSuccess{
+    color:green;
+}
